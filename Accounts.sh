@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script updates data of csv file with employee data  in accordance with requirements: 1) name field: format first letter of name/surname uppercase and all other letters lowercase.
-# 2) email field: first letter from name and full surname,lowercase
+# 2) email field: first letter from name and full surname,lowercase and @abc.com
 
 
 file=$1
