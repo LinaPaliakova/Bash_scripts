@@ -12,6 +12,11 @@ exit 255
 fi
 
 
-/usr/sbin/asterisk -rx "core restart gracefully" # restarting asterisk from cli
-                                      
+/usr/sbin/asterisk -rx "core stop gracefully" >/dev/null 2>&1# restarting asterisk from cli
+
+
+while ps ax | grep '[s]afe_asterisk' >/dev/null ; do sleep 3 ; done
+
+service asterisk start >/dev/null 2>&1                              
 echo "Asterisk restarted at `date`" | mail -s "Asterisk restarted" abc@gmail.com
+
